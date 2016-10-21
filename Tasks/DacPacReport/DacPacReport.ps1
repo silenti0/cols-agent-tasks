@@ -219,6 +219,7 @@ if ($compareBuild -ne $null) {
             # upload the schema report files as artifacts
             Write-Verbose -Verbose "Uploading report"
             $schemaComparePath = Resolve-Path ".\SchemaCompare"
+	    Write-VstsUploadArtifact -ContainerFolder "SchemaCompare" -Name "SchemaCompare" -Path "$schemaComparePath\deploymentReport.md" 
             
             # Add the summary sections
             Write-VstsAddAttachment -Type "Distributedtask.Core.Summary" -Name "Schema Change Summary - $dacpacName.dacpac" -Path "$schemaComparePath\deploymentReport.md"
