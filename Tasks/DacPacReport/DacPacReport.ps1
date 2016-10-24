@@ -228,5 +228,4 @@ if ($compareBuild -ne $null) {
     }
 }
 
-
 Trace-VstsLeavingInvocation $MyInvocation
